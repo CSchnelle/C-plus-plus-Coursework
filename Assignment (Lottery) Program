@@ -1,0 +1,44 @@
+#include "stdafx.h"
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+	vector<int> lottoList;
+
+	//These are the lotter numbers in the vector
+	lottoList.push_back(13579);
+	lottoList.push_back(26791);
+	lottoList.push_back(26792);
+	lottoList.push_back(33445);
+	lottoList.push_back(55555);
+	lottoList.push_back(62483);
+	lottoList.push_back(77777);
+	lottoList.push_back(79422);
+	lottoList.push_back(85647);
+	lottoList.push_back(93121);
+
+	
+	int winningNumber;
+	//User is first prompted to enter a 5-digit lotter number
+	cout << "Enter this week's 5-digit winning lottery number:  ";
+	cin >> winningNumber;
+
+	for (int i = 0; i<10; i++)
+	{
+		//This performs a search to compare entered number to winning numbers stored in the vector.
+		if (lottoList[i] == winningNumber)
+		{
+			cout << "\n\nCongratulations, you are a winner.\n\n" << endl;
+
+			break;
+		}
+		else if (i == 9) cout << "\n\nYou did not win this week..\n\n" << endl;
+		//If the number entered does not match one of the winning numbers that are stored, then the user will see an output message that they are not a winner.
+	}
+
+	system("pause");
+	return 0;
+}
