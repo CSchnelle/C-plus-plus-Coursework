@@ -1,0 +1,85 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+class GradedActivity
+{
+
+
+private:
+	double score;  // Numeric score
+					
+public: GradedActivity()
+{
+	score = 0.0;
+}
+public:
+	GradedActivity(double s)//setter method
+	{
+		score = s;
+	}
+	void setScore(double s)
+	{
+		score = s;
+	}
+	/**
+	The getScore method returns the score.
+	@return The value stored in the score field.
+	*/
+
+	 double getScore() const
+	{
+		return score;
+
+	}
+	 char getLetterGrade() const;
+};
+char GradedActivity::getLetterGrade() const { //if else loop determines based on total points, which letter grade is received
+	char letterGrade;
+
+	if (score > 89) {
+		letterGrade = 'A';
+	}
+	else if (score > 79) {
+		letterGrade = 'B';
+	}
+	else if (score > 69) {
+		letterGrade = 'C';
+	}
+	else if (score > 59) {
+		letterGrade = 'D';
+	}
+	else {
+		letterGrade = 'F';
+	}
+
+	return letterGrade;
+}
+
+
+
+
+class Essay : public GradedActivity //this is the derived essay class
+{
+	
+public:
+	void getGrade()
+	{
+		cout << "\nGrade:" << getLetterGrade();
+	}
+};
+	int main(void)
+	{
+	
+		double grammar,  spelling, correctLength, content;//arguments
+		
+			cout << "Enter Grammar Score:"; cin >> grammar;//this prompts user to input scores once all scores are inputted it prints total letter grade
+			cout << "\nEnter Spelling Score:"; cin >> spelling;
+			cout << "\nEnter Correct Length Score:"; cin >> correctLength;
+			cout << "\nEnter Content Score:"; cin >> content;
+			double total = grammar + spelling + correctLength + content;//arguments
+			GradedActivity act(total);
+			cout << "\n Final Letter Grade:" << act.getLetterGrade() << endl;
+			system ("pause");
+			return 0;
+		}
