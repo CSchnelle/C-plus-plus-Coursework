@@ -1,0 +1,88 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+struct customer
+{
+	char name[50], address[50], city[20], state[10], date;
+	int i, n, num, zip, telephone, bal;
+}cust[20];
+int main()
+{
+	
+		
+	int ch, i, n;
+	
+
+	cout << "\n Menu";
+	cout << "\n 1. Enter new account information";
+	cout << "\n 2. Change account information";
+	cout << "\n 3. Display all account information";
+	cout << "\n 4. Exit the program";
+	cout << "\n Enter Your Choice: ";
+	cin >> ch;
+	switch (ch)
+	{
+	case 1:
+		cout << "\n Enter new account information";
+		cout << "\n Enter number of Customers: ";
+		cin >> n;
+		for (i = 0; i<n; i++)
+		{
+			cust[i].num = i + 1;
+			cout << "\n Customer number: " <<cust[i].num;
+			cout << "\n Enter Customer name: ";
+			cin >> cust[i].name;
+			cout << "\n Enter Customer address: ";
+			cin >> cust[i].address;
+			cout << "\n Enter Customer city: ";
+			cin >> cust[i].city;
+			cout << "\n Enter Customer State: ";
+			cin >> cust[i].state;
+			cout << "\n Enter ZIP code: ";
+			cin >> cust[i].zip;
+			cout << "\n Enter Telephone number: ";
+			cin >> cust[i].telephone;
+			cout << "\n Enter Account balance: ";
+			cin >> cust[i].bal;
+			cout << "\n Enter Date: ";
+			cin >> cust[i].date;
+		}
+		break;
+	case 2:
+		int no;
+		cout << "\n Change the Information";
+		cout << "\n Enter Customer Number: ";
+		cin >> no;
+		if (no == cust[i].num)
+		{
+			cout << "\n Customer number: " << i + 1;
+			cout << "\n Enter Customer name: " << cust[i].name;
+			cout << "\n Enter Customer address: " << cust[i].address;
+			cout << "\n Enter Customer city: ";
+			cout << "\n Enter Customer State: ";
+			cout << "\n Enter ZIP code: ";
+			cout << "\n Enter Telephone number: ";
+			cout << "\n Enter Account balance: ";
+			cout << "\n Enter Date: ";
+		}
+		break;
+	case 3:
+		cout << "\n Display all Information";
+		for (i = 0; i<n; i++)
+		{
+			cout << "\n Customer number: " << i + 1;
+			cout << "\n Enter Customer name: " << cust[i].name;
+			cout << "\n Enter Customer address: " << cust[i].address;
+			cout << "\n Enter Customer city: ";
+			cout << "\n Enter Customer State: ";
+			cout << "\n Enter ZIP code: ";
+			cout << "\n Enter Telephone number: ";
+			cout << "\n Enter Account balance: ";
+			cout << "\n Enter Date: ";
+		}
+		break;
+	case 4:
+		cout << "\n Thank You!!!!";
+		break;
+	}
+	return 0;
