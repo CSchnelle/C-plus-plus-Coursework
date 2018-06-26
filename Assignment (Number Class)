@@ -1,0 +1,70 @@
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+#include <string>
+using namespace std;
+//declare class
+class Numbers
+{
+	//declaring variables
+	int num;
+public:
+	Numbers(int x)
+	{
+		num = x;
+	}
+	void print();
+};
+void Numbers::print()
+{//declaring static strings
+	int n;
+	string lessThan20[] = { "zero", "one", "two","three","four","five","six","seven","eight","nine","ten",
+	"eleven","twelve","thirteen","fourteen","fifteen","sizteen","seventeen","eighteen","nineteen" };
+	string hundred = " hundred";
+	string thousand = "thousand";
+	string tens[] = { "zero","ten","twenty","thirty","fourty","fifty","sizty","seventy","eighty","ninety" };
+	
+	if (num < 0)
+		cout << "It is a negative number";
+	num = abs(num);
+	n = num / 1000;
+	if (n > 0)
+		cout << "" <<lessThan20[n] << thousand;
+	num %= 1000;
+	n = num / 100;
+	if (n > 0)
+		cout <<lessThan20[n] << hundred;
+	num %= 100;
+	if (num >= 20)
+	{
+		n = num / 10;
+		if (n>0)
+			cout <<tens[n] << "";
+	}
+	else if (num>=10)
+	{
+		cout << lessThan20[num] << "";
+		return;
+	}
+	num %= 10;
+	if (num>0)
+	cout<<lessThan20[num];
+	cout<< "";
+}//end of numbers class
+
+int main()
+{
+	int n;
+	cout << "Enter a Number Range 0=9999";//prompts user to input number
+	cin >> n;
+	while (n != 0)
+	{
+		cout << "The Number\n" << n << "\ntranslates in English to :\n" << endl;//gives output to user
+		Numbers number(n);//declares member function
+		number.print();
+		cout << "\n\nEnter a number rang 0-9999";
+		cin >> n;
+	}
+	system("pause");
+    return 0;
+}
