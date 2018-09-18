@@ -1,7 +1,4 @@
-/* Do Programming Project 2 on page 611. You may watch the video note for
-* Programming Project 1 on page 611 to get some idea. Then try to finish
-* independently by complete this sample file.
-*
+
 * Author: Catherine Schnelle
 * Version: 09/08/2018
 */
@@ -29,11 +26,6 @@ private:
 
 int main()
 {
-	// You implement the test code here
-	// You may watch the video note to get the idea
-	// notice that user will only enter balance as a double value
-	// You may implement it as a menu oriented testing program
-	// which be able to test constructors, methods of CDAccount class
 	CDAccount account;
 	cout << "Test Menu: " << endl; //output
 	account.output(cout);
@@ -41,12 +33,6 @@ int main()
 	account.input(cin);
 	account.output(cout);
 }
-
-// Implement the class definition here. Notice that the interfaces are the
-// same as in Programming Project 1. However, the implementation will be
-// different since the private information balance is stored differently
-// for example, the input function will only read the balance, itnerest rate
-// and term from the user. So it should be modified as following
 
 CDAccount::CDAccount() {
 	dollar = 0;
